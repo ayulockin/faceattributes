@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import string
 import random
+import argparse
 from shutil import copyfile
 
 ap = argparse.ArgumentParser()
@@ -16,7 +17,7 @@ scr_image_path = args["data"]
 images = os.listdir(scr_image_path)
 
 try:
-	os.makedirs('UTKFaceimages')
+	os.makedirs('images')
 	print("images dir made")
 except:
 	print("dir already present")
@@ -32,10 +33,16 @@ for image in images:
 	image_id = randomString()
 	age, gender, ethnicity = image.split('_')[0:3]
 	face_dataset.loc[c] = [image_id, age, gender, ethnicity]
-	copyfile(scr_image_path+image, 'UTKFaceimages/'+image_id+'.jpg')
+	copyfile(scr_image_path+image, 'images/'+image_id+'.jpg')
 
 	c+=1
 
 print("[INFO] csv dataset preparing....")
+try:
+	os.makedirs('datasets')
+	print("datasets dir made")
+except:
+	print("dir already present")
+
 face_dataset.to_csv('datasets/face_dataset.csv', index=False)
 print("[INFO] Job done")
