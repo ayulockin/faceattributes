@@ -109,7 +109,7 @@ class faceDetection():
 
         face_count = 0
         for detection in result:
-            print("[INFO] Face ID", face_count)
+            # print("[INFO] Face ID", face_count)
             bounding_box = detection['box']
 
             x = bounding_box[0]
@@ -118,7 +118,7 @@ class faceDetection():
             h = bounding_box[3]
 
             x, y, w, h = self.getModifyBBox(x,y,w,h,200)
-            print(x,y,w,h)
+            # print(x,y,w,h)
             if x<0: x=0
             if y<0: y=0
 
