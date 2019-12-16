@@ -3,9 +3,7 @@ Repository for the article for weights and biases.
 
 W&B project page: https://app.wandb.ai/ayush-thakur/multi-output-classifier?workspace=user-ayush-thakur
 
-Attributions:
-
-UTK Face Dataset: 
+UTK Face Dataset: https://susanqq.github.io/UTKFace/
 
 ## Citation
 ```
